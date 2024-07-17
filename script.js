@@ -1,8 +1,11 @@
 function minDate(dates) {
-  //write you code here
+  const dateObjects = dates.map(date => new Date(date));
+  const minDateObject = new Date(Math.min(...dateObjects));
+  const year = minDateObject.getFullYear();
+  const month = String(minDateObject.getMonth() + 1).padStart(2, '0');
+  const day = String(minDateObject.getDate()).padStart(2, '0');
+  return `${year}/${month}/${day}`;
 }
-
-// Do not change the code
 
 var dates = [
   "2023/03/01",
